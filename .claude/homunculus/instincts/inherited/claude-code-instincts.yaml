@@ -1,0 +1,745 @@
+# Instincts generated from https://github.com/JamesWilliam1977/claude-code
+# Generated: 2026-04-29T13:30:09.537Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: claude-code-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix, docs, feat, chore, build
+
+## Evidence
+
+- 100 commits analyzed
+- Detected conventional commit pattern
+- Examples: docs: update contributors, feat: Add DeepSeek thinking mode support for OpenAI compatibility layer (#206)
+
+---
+id: claude-code-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Commit Length
+
+## Action
+
+Keep commit messages concise (~31 characters)
+
+## Evidence
+
+- Average commit message length: 31 chars
+- Based on 100 commits
+
+---
+id: claude-code-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: claude-code-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: claude-code-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: claude-code-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: services, components, bridge, cli, constants
+
+---
+id: claude-code-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Test Framework
+
+## Action
+
+Use jest as the test framework
+
+## Evidence
+
+- Test framework detected: jest
+- File pattern: *.test.ts
+
+---
+id: claude-code-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: claude-code-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/services/api/openai/__tests__/*, src/services/api/openai/*, packages/remote-control-server/src/__tests__/*
+
+---
+id: claude-code-workflow-refactoring
+trigger: "when refactoring code"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Refactoring
+
+## Action
+
+Follow the refactoring workflow:
+1. Ensure tests pass before refactor
+2. Refactor code structure
+3. Verify tests still pass
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*
+
+---
+id: claude-code-workflow-update-contributors-list
+trigger: "when doing update contributors list"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Update Contributors List
+
+## Action
+
+Follow the update-contributors-list workflow:
+1. Edit contributors.svg to add or update contributor entries
+2. Commit with message 'docs: update contributors'
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: contributors.svg
+
+---
+id: claude-code-workflow-documentation-sync-and-correction
+trigger: "when doing documentation sync and correction"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Documentation Sync And Correction
+
+## Action
+
+Follow the documentation-sync-and-correction workflow:
+1. Identify discrepancies between docs and code
+2. Edit relevant .mdx or .md files to correct or expand documentation
+3. Commit with message referencing documentation correction
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: docs/**/*.mdx, docs/**/*.md, README.md
+
+---
+id: claude-code-workflow-feature-addition-with-tests-and-docs
+trigger: "when doing feature addition with tests and docs"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Feature Addition With Tests And Docs
+
+## Action
+
+Follow the feature-addition-with-tests-and-docs workflow:
+1. Add or modify implementation files (e.g., src/commands/feature.tsx, src/tools/FeatureTool.ts)
+2. Add or update test files (e.g., __tests__/*.test.ts)
+3. Update or add documentation (e.g., docs/features/feature-name.md, README.md)
+4. Update package.json or lock files if dependencies are involved
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/commands/**/*.ts*, src/tools/**/*.ts*, src/components/**/*.ts*
+
+---
+id: claude-code-workflow-typescript-type-fix-sweep
+trigger: "when doing typescript type fix sweep"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Typescript Type Fix Sweep
+
+## Action
+
+Follow the typescript-type-fix-sweep workflow:
+1. Identify files with type errors or unsafe casts (e.g., as any)
+2. Edit files to correct types, add interfaces, or replace unsafe casts
+3. Commit with message indicating type fixes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/**/*.ts*, packages/**/*.ts*
+
+---
+id: claude-code-workflow-bugfix-with-targeted-test-or-doc
+trigger: "when doing bugfix with targeted test or doc"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Bugfix With Targeted Test Or Doc
+
+## Action
+
+Follow the bugfix-with-targeted-test-or-doc workflow:
+1. Edit implementation files to fix the bug
+2. Optionally add or update a test to cover the bug scenario
+3. Optionally update documentation to clarify behavior
+4. Commit with 'fix:' prefix and bug description
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: src/**/*.ts*, src/components/**/*.ts*, src/services/**/*.ts*
+
+---
+id: claude-code-workflow-add-or-update-command
+trigger: "when doing add or update command"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Add Or Update Command
+
+## Action
+
+Follow the add-or-update-command workflow:
+1. Create or update src/commands/command-name/index.ts or command-name.tsx
+2. Register the command in src/commands.ts
+3. Add supporting files as needed (e.g., src/commands/command-name/feature.tsx)
+4. Optionally add tests and documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src/commands/**/*.ts*, src/commands.ts
+
+---
+id: claude-code-workflow-feature-flag-or-config-addition
+trigger: "when doing feature flag or config addition"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/JamesWilliam1977/claude-code
+---
+
+# Claude Code Workflow Feature Flag Or Config Addition
+
+## Action
+
+Follow the feature-flag-or-config-addition workflow:
+1. Edit build.ts, scripts/dev.ts, or src/constants/product.ts to add or update feature flag
+2. Update code to check the new flag
+3. Optionally update documentation to describe the flag
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: build.ts, scripts/dev.ts, src/constants/product.ts
+
+---
+id: claude-code-instinct-file-naming-camelCase
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct File Naming CamelCase
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Naming conventions: files = camelCase
+- Pattern in src/components, src/services
+
+---
+id: claude-code-instinct-function-naming-camelCase
+trigger: "When defining a function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Naming conventions: functions = camelCase
+- Pattern in src/services/api/openai/*
+
+---
+id: claude-code-instinct-class-naming-pascalCase
+trigger: "When defining a class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Naming conventions: classes = PascalCase
+- Pattern in src/components
+
+---
+id: claude-code-instinct-constant-naming-screaming-snake-case
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Constant Naming Screaming Snake Case
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Naming conventions: constants = SCREAMING_SNAKE_CASE
+- Pattern in src/constants
+
+---
+id: claude-code-instinct-import-style-relative
+trigger: "When importing modules within the project"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Import Style Relative
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- importStyle: relative
+- Pattern in src/services/api/openai/*
+
+---
+id: claude-code-instinct-export-style-named
+trigger: "When exporting modules or functions"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Export Style Named
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- exportStyle: named
+- Pattern in src/components, src/services
+
+---
+id: claude-code-instinct-test-file-pattern
+trigger: "When creating a test file"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Test File Pattern
+
+## Action
+
+Name the file with the pattern *.test.ts
+
+## Evidence
+
+- testing.filePattern: *.test.ts
+- Pattern in src/services/api/openai/__tests__/*
+
+---
+id: claude-code-instinct-test-framework-jest
+trigger: "When writing or running tests"
+confidence: 0.95
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Test Framework Jest
+
+## Action
+
+Use Jest as the testing framework
+
+## Evidence
+
+- testing.framework: jest
+- Pattern in package.json
+
+---
+id: claude-code-instinct-unit-test-type
+trigger: "When writing tests for code"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Unit Test Type
+
+## Action
+
+Write unit tests
+
+## Evidence
+
+- testing.testTypes: unit
+- Pattern in src/services/api/openai/__tests__/*
+
+---
+id: claude-code-instinct-commit-conventional-format
+trigger: "When making a git commit"
+confidence: 0.95
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Commit Conventional Format
+
+## Action
+
+Format the commit message as <type>: <description>, using one of: fix, feat, docs, chore, build
+
+## Evidence
+
+- commits.type: conventional
+- Examples: 'fix: support CRLF SSE frame parsing (#223)'
+
+---
+id: claude-code-instinct-commit-average-length
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Commit Average Length
+
+## Action
+
+Keep the commit message concise (around 31 characters on average)
+
+## Evidence
+
+- commits.averageLength: 31
+- Pattern in commit examples
+
+---
+id: claude-code-instinct-update-contributors-list
+trigger: "When a new contributor is added or contributor information changes"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Update Contributors List
+
+## Action
+
+Edit contributors.svg and commit with message 'docs: update contributors'
+
+## Evidence
+
+- Workflow: update-contributors-list
+- Example commit: 'docs: update contributors'
+
+---
+id: claude-code-instinct-documentation-sync-correction
+trigger: "When code changes or documentation is found to be out of sync with implementation"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Documentation Sync Correction
+
+## Action
+
+Edit relevant documentation files to correct or expand docs and commit with a message referencing documentation correction
+
+## Evidence
+
+- Workflow: documentation-sync-and-correction
+- Pattern in docs/**/*.mdx, README.md
+
+---
+id: claude-code-instinct-feature-addition-with-tests-and-docs
+trigger: "When adding a significant new capability (e.g., new command, tool, or integration)"
+confidence: 0.93
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Feature Addition With Tests And Docs
+
+## Action
+
+Add or modify implementation files, add/update test files, update/add documentation, and update package.json or lock files if dependencies are involved
+
+## Evidence
+
+- Workflow: feature-addition-with-tests-and-docs
+- Pattern in src/commands, docs/features, package.json
+
+---
+id: claude-code-instinct-typescript-type-fix-sweep
+trigger: "When type errors accumulate or after major refactors affecting types"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Typescript Type Fix Sweep
+
+## Action
+
+Edit files to correct types, add interfaces, or replace unsafe casts, and commit with message indicating type fixes
+
+## Evidence
+
+- Workflow: typescript-type-fix-sweep
+- Pattern in src/**/*.ts*, packages/**/*.ts*
+
+---
+id: claude-code-instinct-bugfix-with-targeted-test-or-doc
+trigger: "When a bug is reported or discovered"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Bugfix With Targeted Test Or Doc
+
+## Action
+
+Edit implementation files to fix the bug, optionally add/update a test or documentation, and commit with 'fix:' prefix and bug description
+
+## Evidence
+
+- Workflow: bugfix-with-targeted-test-or-doc
+- Pattern in src/**/*.ts*, docs/**/*.mdx
+
+---
+id: claude-code-instinct-add-or-update-command
+trigger: "When a new user command is needed"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Add Or Update Command
+
+## Action
+
+Create or update src/commands/command-name/index.ts or command-name.tsx, register in src/commands.ts, add supporting files, optionally add tests and documentation
+
+## Evidence
+
+- Workflow: add-or-update-command
+- Pattern in src/commands/**/*.ts*
+
+---
+id: claude-code-instinct-feature-flag-or-config-addition
+trigger: "When introducing a new experimental or optional feature"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: JamesWilliam1977/claude-code
+---
+
+# Claude Code Instinct Feature Flag Or Config Addition
+
+## Action
+
+Edit build.ts, scripts/dev.ts, or src/constants/product.ts to add or update feature flag, update code to check the new flag, optionally update documentation
+
+## Evidence
+
+- Workflow: feature-flag-or-config-addition
+- Pattern in build.ts, src/constants/product.ts
+
